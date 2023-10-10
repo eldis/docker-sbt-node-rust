@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.authors="Anatoly Galiulin <galiulin.anatoly@gmail
 ENV NODESOURCE_VERSION=16.x
 ENV NODE_VERSION=16.20.2-deb-1nodesource1
 ENV YARN_VERSION=1.22.19-1
-ENV RUST_VERSION=1.67.1
+ENV RUST_VERSION=1.73.0
 
 RUN rm -rf /var/lib/apt/lists/* && \
   apt-get update && \
