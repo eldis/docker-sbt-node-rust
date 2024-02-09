@@ -2,8 +2,8 @@ FROM hseeberger/scala-sbt:11.0.10_1.4.9_2.12.13
 
 LABEL org.opencontainers.image.authors="Anatoly Galiulin <galiulin.anatoly@gmail.com>"
 
-ENV NODESOURCE_VERSION=16.x
-ENV NODE_VERSION=16.20.2-deb-1nodesource1
+ENV NODESOURCE_VERSION=20.x
+ENV NODE_VERSION=20.11.0-1nodesource1
 ENV YARN_VERSION=1.22.19-1
 ENV RUST_VERSION=1.73.0
 
