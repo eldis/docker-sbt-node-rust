@@ -10,9 +10,10 @@ Automated builds are available on [Dockerhub](https://hub.docker.com/r/vegansk/s
 
 ## Versioning
 
-Tag versioning scheme: `A_B_C_D`:
+Tag versioning scheme: `A_B_C_D[-psql]`:
 
 - `A` is JDK version
 - `B` is SBT version
 - `C` is NodeJS version
 - `D` is rust version
+- `psq` means presence of postgresql client

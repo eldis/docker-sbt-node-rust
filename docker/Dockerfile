@@ -15,11 +15,13 @@ RUN ( curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - ) && \
   ( echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list ) && \
   ( curl -sL https://deb.nodesource.com/setup_${NODESOURCE_VERSION} | bash - ) && \
   apt-get install -y nodejs=$NODE_VERSION yarn=$YARN_VERSION build-essential && \
-  curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --default-toolchain $RUST_VERSION && \
+  apt-get install -y postgresql-client libpq-dev
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --default-toolchain $RUST_VERSION && \
   rm -rf /var/lib/apt/lists/*
 
 ENV PATH="/root/.cargo/bin:${PATH}"
 
 RUN rustup component add rustfmt clippy
 
-RUN cargo --locked install sqlx-cli --no-default-features --features rustls,postgres --force
+RUN cargo --locked install sqlx-cli@0.7.3 --no-default-features --features rustls,postgres --force
